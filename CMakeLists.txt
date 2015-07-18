@@ -68,8 +68,15 @@ endif()
 get_filename_component(INSTALL_PREFIX "${PYTHON_LIBRARIES}" PATH)
 get_filename_component(INSTALL_PREFIX "${INSTALL_PREFIX}" PATH)
 
+
 if (NOT ${INSTALL_PREFIX} STREQUAL "")
   set(CMAKE_INSTALL_PREFIX "${INSTALL_PREFIX}")
+endif()
+
+set (LID "" CACHE STRING "user define local install directory")
+
+if (NOT ${LID} STREQUAL "")
+    set(CMAKE_INSTALL_PREFIX "${LID}")
 endif()
 
 ##############################################################################
@@ -89,4 +96,5 @@ endif(BUILD_DOC)
 
 ##############################################################################
 
-message(STATUS "Tyssue will be installed to ${INSTALL_PREFIX}")
+
+message(STATUS "Tyssue will be installed to ${CMAKE_INSTALL_PREFIX}")

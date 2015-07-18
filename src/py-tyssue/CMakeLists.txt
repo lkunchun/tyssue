@@ -1,5 +1,5 @@
 # Install Python module
-find_program(PYTHON "python" REQUIRED)
+find_program(PYTHON "python3" REQUIRED)
 
 set(SETUP_PY "${CMAKE_CURRENT_BINARY_DIR}/setup.py")
 set(DEPS     "${CMAKE_CURRENT_SOURCE_DIR}/tyssue/__init__.py")
